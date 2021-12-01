@@ -4,7 +4,7 @@ require_once('class/database.php');
 
 $db          = new Database();
 $tblName     = 'product';
-$redirectURL = 'index.php';
+$redirectURL = '/';
 
 if ( ! empty($_REQUEST['action_type']) && $_REQUEST['action_type'] == 'add')
 {
@@ -22,7 +22,7 @@ if ( ! empty($_REQUEST['action_type']) && $_REQUEST['action_type'] == 'add')
 			$product_attribute = $_POST['weight'];
 			break;
 		case '3' : 
-			$product_attribute = $_POST['height'] . 'x' . $_POST['width'] . 'x' . $_POST['lenght'];
+			$product_attribute = $_POST['height'] . 'x' . $_POST['width'] . 'x' . $_POST['length'];
 			break;
 	}
 

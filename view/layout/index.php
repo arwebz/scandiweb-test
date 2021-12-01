@@ -1,15 +1,19 @@
+	<form method="post" action="action-product.php?action_type=delete_multi" name="product_delete" id="product_delete">
 	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 		<h3>Product List</h3>
 		
 		<div class="col-md-3 text-end">
-			<a href="add-product.php" class="btn btn-primary">ADD</a>
-			<button type="submit" class="btn btn-danger" form="product_delete" name="delete-product-btn" id="delete-product-btn">MASS DELETE</button>
+			<button type="button" class="btn btn-primary" onclick="window.location.href='add-product.php';">
+				ADD
+			</button>
+			<button type="submit" class="btn btn-danger" form="product_delete" name="delete-product-btn" id="delete-product-btn">
+				MASS DELETE
+			</button>
 		</div>
 	</header>
 
-	<?php if ($product) { ?>
+	<?php if ( ! empty($product)) { ?>
 	
-	<form method="post" action="action-product.php?action_type=delete_multi" name="product_delete" id="product_delete">
 	<div class="row row-cols-4 g-4">
 		<?php foreach ($product as $row) { ?>
 		
@@ -39,6 +43,7 @@
 									break;
 							}
 							?>
+							
 						</p>
 					</label>
 				</div>
