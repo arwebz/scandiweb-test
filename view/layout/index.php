@@ -3,13 +3,13 @@
 		
 		<div class="col-md-3 text-end">
 			<a href="add-product.php" class="btn btn-primary">ADD</a>
-			<label for="delete-product-btn" class="btn btn-danger">MASS DELETE</label>
+			<button type="submit" class="btn btn-danger" form="product_delete" name="delete-product-btn" id="delete-product-btn">MASS DELETE</button>
 		</div>
 	</header>
 
 	<?php if ($product) { ?>
 	
-	<form method="post" action="action-product.php?action_type=delete_multi" id="product_delete">
+	<form method="post" action="action-product.php?action_type=delete_multi" name="product_delete" id="product_delete">
 	<div class="row row-cols-4 g-4">
 		<?php foreach ($product as $row) { ?>
 		
@@ -47,7 +47,5 @@
 		<?php } ?>
 
 	</div>
-
-	<button type="submit" class="btn btn-danger visually-hidden" name="delete-product-btn" id="delete-product-btn">MASS DELETE</button>
 	</form>
 	<?php } ?>

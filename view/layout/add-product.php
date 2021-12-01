@@ -2,14 +2,14 @@
 		<h3><?php echo $page_title; ?></h3>
 		
 		<div class="col-md-3 text-end">
-			<label for="btn_submit" class="btn btn-success">Save</label>
-			<label for="btn_cancel" class="btn btn-warning">Cancel</label>
+			<button type="submit" class="btn btn-success" form="product_form" name="btn_submit" id="btn_submit">Save</button>
+			<button type="button" class="btn btn-warning" form="product_form" name="btn_cancel" id="btn_cancel" onclick="window.location.href='index.php';">Cancel</button>
 		</div>
 	</header>
 
 	<div class="row row-cols-2 g-2">
 		<div class="col">
-			<form method="post" action="action-product.php?action_type=add" class="needs-validation" id="product_form" novalidate>
+			<form method="post" action="action-product.php?action_type=add" class="needs-validation" name="product_form" id="product_form" novalidate>
 				<div class="row mb-3">
 					<label for="sku" class="col-sm-4 col-form-label">SKU</label>
 					<div class="col-sm-8">
@@ -108,9 +108,6 @@
 						</div>
 					</div>
 				</div>
-
-				<button type="submit" class="btn btn-success visually-hidden" name="btn_submit" id="btn_submit">Save</button>
-				<button type="button" class="btn btn-warning visually-hidden" name="btn_cancel" id="btn_cancel" onclick="window.location.href='index.php';">Cancel</button>
 			</form>
 		</div>
 	</div>
