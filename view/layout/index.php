@@ -12,10 +12,10 @@
 		</div>
 	</header>
 
-	<?php if ( ! empty($product)) { ?>
+	<?php if ( ! empty($productList)) { ?>
 	
 	<div class="row row-cols-4 g-4">
-		<?php foreach ($product as $row) { ?>
+		<?php foreach ($productList as $row) { ?>
 		
 		<div class="col">
 			<div class="card text-center">
@@ -29,20 +29,7 @@
 						<p class="card-text">
 							<?php echo $row['product_name']; ?><br />
 							<?php echo $row['product_price']; ?> $<br />
-							<?php
-							switch($row['product_type'])
-							{
-								case '1' : 
-									echo 'Size (MB) : ' . $row['product_attribute'];
-									break;
-								case '2' : 
-									echo 'Weight (KG) : ' . $row['product_attribute'];
-									break;
-								case '3' : 
-									echo 'Dimension (CM) : ' . $row['product_attribute'];
-									break;
-							}
-							?>
+							<?php echo $row['product_attribute']; ?>
 							
 						</p>
 					</label>

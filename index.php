@@ -1,6 +1,19 @@
 <?php
 require_once('config/config.php');
 require_once('class/database.php');
+require_once('class/product.php');
+
+$db                   = new Database();
+$dvd                  = new DVD($db);
+$book                 = new Book($db);
+$furniture            = new Furniture($db);
+$product['DVD']       = $dvd->showProduct();
+$product['Book']      = $book->showProduct();
+$product['Furniture'] = $furniture->showProduct();
+
+$productList = array_merge($product['DVD'], $product['Book'], $product['Furniture']);
+$columns     = array_column($productList, 'ID');
+array_multisort($columns, SORT_ASC, $productList);
 
 
 $page_title = 'Product List';
@@ -11,8 +24,6 @@ $head_data  = array(
 require_once('view/include/head.php');
 
 
-$db = new Database();
-$product = $db->tbSelect('product');
 require_once('view/layout/index.php');
 
 
